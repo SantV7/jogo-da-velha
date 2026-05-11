@@ -9,24 +9,50 @@ html {
 }
 
 body {
+  color: white;
   min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-image: linear-gradient(to bottom, rgb(119, 129, 151), rgb(56, 43, 63));
+  align-items: center;
+}
+
+#container {
+  border: 3px solid rgb(95, 95, 250);
+  display: grid;
+  grid-template-columns: repeat(3, 140px);
+  border-radius: 6px;
+  grid-template-rows: repeat(3, 140px);
+}
+
+
+.square {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  border: 3px solid rgb(128, 170, 247);
+  transition: 0.35s;
+  cursor: pointer;
+}
+.square:hover {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.309);
+  scale: 1.16;
+  border: 3px solid rgb(167, 196, 252);
+}
+
+.area_counter {
+  margin-bottom: 30px;
+  border-radius: 3px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-#container {
-  height: 250px;
-  border: 1px solid blue;
-  display: grid;
-  grid-template-columns: repeat(3, 90px);
-}
-
-
-.square {
+.area_counter > #timer {
+  border-bottom: 3px solid rgb(162, 162, 247);
+  font-size: 1.7rem;
+  width: 20%;
  
-  height: 100%;
-  text-align: center;
-  height: 100%;
-  border: 1px solid orange;
+ 
 }
