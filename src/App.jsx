@@ -4,21 +4,19 @@ import './index.css'
 
 function App() {
 
-  const [timer, seTimer] = useState(null)
+  const [timer, setTimer] = useState(null)
   const [restTimer, setRestTimer] = useState(false)
+  const [minutes, setMinutes] = useState(1)
+  const [seconds, setSeconds] = useState(59)
+
 
   const timerDecrease = () => {
-    const min = 1
-    const seconds = 59
-    setTimer(`${min}:${seconds} restantes`)
+    setRestTimer(true)
 
-    const startTime = setInterval(() => {
-      while(seconds != 0) {
-        seconds - 1
-      }
-    }, 1000)
-
-    return () => clearInterval(startTime)
+    const timerInterval = setInterval(() => {
+      setSeconds(prev => prev - 1)
+    }, 1000);
+      return () => clearInterval(timerInterval)
   }
 
 
@@ -26,7 +24,7 @@ function App() {
     <>
 
       <div className="area_counter">
-        <div id='timer'>⏱️ { restTimer === null ? timer : 'tempo' }</div>
+        <div id='timer'>⏱️ { restTimer === true ? timer : '' }</div>
       </div>
       
       <main id='container'>
@@ -41,7 +39,7 @@ function App() {
         <div className='square'>⭕</div>
       </main>
 
-      <button onClick={timerDecrease}>Começar</button>
+      <div className="center_btn"><button onClick={timerDecrease}>Começar</button></div>
       
            
   
