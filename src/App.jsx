@@ -14,7 +14,7 @@ function App() {
     setRestTimer(true)
 
     const timerInterval = setInterval(() => {
-      setSeconds(prev => prev - 1)
+      setSeconds((prev) => prev - 1)
     }, 1000);
       return () => clearInterval(timerInterval)
   }
@@ -40,8 +40,6 @@ function App() {
       </main>
 
       <div className="center_btn"><button onClick={timerDecrease}>Começar</button></div>
-      
-           
   
     </>
   )
