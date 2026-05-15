@@ -14,15 +14,15 @@ function App() {
     setRestTimer(true)
 
     const timerInterval = setInterval(() => {
-      setSeconds((prev) => prev - 1)
-    }, 1000);
+      setSeconds((prev) => prev - 1) 
+
+    }, 1000)
       return () => clearInterval(timerInterval)
   }
 
 
   return (
     <>
-
       <div className="area_counter">
         <div id='timer'>⏱️ { restTimer === true ? timer : '' }</div>
       </div>
@@ -39,8 +39,7 @@ function App() {
         <div className='square'>⭕</div>
       </main>
 
-      <div className="center_btn"><button onClick={timerDecrease}>Começar</button></div>
-  
+      <div className="center_btn"><button onClick={() => timerDecrease()}>Começar</button></div>
     </>
   )
 }
